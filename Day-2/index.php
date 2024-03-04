@@ -1,6 +1,7 @@
 <?php
-$status = "login";
-
+session_start();
+$status = isset($_SESSION['status']) ? $_SESSION['status'] : false;
+var_dump($status);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,11 +11,16 @@ $status = "login";
     <title>Document</title>
 </head>
 <body>
-    <form action='/' method='post'>
+    <?php
+    if($status == "false"){
+        echo "<form action='login.php' method='post'>
         <button type='submit'>Login</button>
-    </form>
-    <form action='/' method='post'>
+    </form>";
+    }else{
+        echo "<form action='logout.php' method='post'>
         <button type='submit'>Logout</button>
-    </form>
+    </form>";
+    }
+    ?>
 </body>
 </html>
