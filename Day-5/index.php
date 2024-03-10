@@ -31,6 +31,14 @@ $result = mysqli_fetch_all($phone_data,MYSQLI_ASSOC);
                 <form action='delete_contact.php' method='post'>
                 <input type='hidden' name='id' value={$d['ID']}>
                 <button type='submit'>Delete</button>
+                </form>
+                <form action='edit_contact.php' method='post'>
+                <input type='hidden' name='id' value={$d['ID']}>
+                <input type='hidden' name='first' value={$d['first_name']}>
+                <input type='hidden' name='mid' value={$d['middle_name']}>
+                <input type='hidden' name='last' value={$d['last_name']}>
+                <input type='hidden' name='number' value={$d['phone_number']}>
+                <button type='submit'>Edit</button>
             </form>";
             }
             
