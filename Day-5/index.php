@@ -3,7 +3,7 @@ require './connect.php';
 $sqlQuery = 'select * from contacts';
 $phone_data = mysqli_query($conn,$sqlQuery);
 $result = mysqli_fetch_all($phone_data,MYSQLI_ASSOC);
-var_dump($result);
+// var_dump($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +16,9 @@ var_dump($result);
     <h1>Welcome to phone management system</h1>
     <form action="add_contact.php" method="post">
         <input type='text' name='first-name' placeholder='first name'>
-        <input type='text' name='middle-name' placeholder='middle name'>>
-        <input type='text' name='last-name' placeholder='last name'>>
-        <input type='text' name='phone' placeholder='phone'>>
+        <input type='text' name='middle-name' placeholder='middle name'>
+        <input type='text' name='last-name' placeholder='last name'>
+        <input type='text' name='phone' placeholder='phone'>
 
         <br>
         <button type="submit">Add</button>
