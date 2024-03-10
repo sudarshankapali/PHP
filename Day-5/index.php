@@ -15,23 +15,19 @@ var_dump($result);
 <body>
     <h1>Welcome to phone management system</h1>
     <form action="" method="post">
-        <input type='text' name='contact'>
+        <input type='text' name='first-name' placeholder='first name'>
+        <input type='text' name='middle-name' placeholder='middle name'>>
+        <input type='text' name='last-name' placeholder='last name'>>
+        <input type='text' name='phone' placeholder='phone'>>
+
         <br>
-        <form action="" method="post">
         <button type="submit">Add</button>
-        </form>
-        <form action="" method="post">
-        <button type="submit">Edit</button>
-        </form>
-        <form action="" method="post">
-        <button type="submit">Delete</button>
-        </form>
     </form>
     <div>
         <ul>
             <?php
-            foreach ($result["first_name"] as $d) {
-                echo "<li>$d</li>";
+            foreach ($result as $d) {
+                echo "<li>{$d['first_name']}</li>";
             }
             
             ?>
