@@ -1,36 +1,35 @@
 <?php
-$hostname = 'localhost';
-$username = 'root';
-$password = '';
-$database_name = 'foods';
-
-$conn = mysqli_connect($hostname, $username, $password, $database_name);
-// echo '<pre>';
-// var_dump($conn);
-// echo '</pre>';
-
-echo " connection success ✅";
-// fetch the data from the backend 
-// $sql = "select * from Food_Table";
-// $result = mysqli_query($conn, $sql);
-// echo "<pre>";
-// var_dump($result);
-// echo "</pre>";
-
+require "connect.php";
 $sql = "select * from Food_Table";
-$sql1 = "insert into Food_Table (Name) values ('Test_Data3')";
-mysqli_query($conn, $sql1);
-echo "<br>data inserted sucessfully";
 $result = mysqli_query($conn, $sql);
+// $sql1 = "insert into Food_Table (Name) values ('Test_Data3')";
+// mysqli_query($conn, $sql1);
+// echo "<br>data inserted sucessfully";
 $rows = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
 ?>
-
-<ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Momo</title>
+</head>
+<body>
+    <main>
+    <section>
+      <form action="add.php" method="post">
+        <input type="text" name="momo">
+        <button type="submit">Add 🛒</button>
+      </form>
+    </section>
+    <ul>
 <?php
 foreach ($rows as $value) {
-    echo "<li>{$value['ID']} {$value['Name']} {$value['created_at']}</li>";
+    echo "<li>{$value['Name']}</li>";
 }
 
 ?>
 </ul>
+    </main>
+</body>
+</html>
