@@ -14,7 +14,7 @@ var_dump($result);
 </head>
 <body>
     <h1>Welcome to phone management system</h1>
-    <form action="" method="post">
+    <form action="add_contact.php" method="post">
         <input type='text' name='first-name' placeholder='first name'>
         <input type='text' name='middle-name' placeholder='middle name'>>
         <input type='text' name='last-name' placeholder='last name'>>
@@ -22,12 +22,16 @@ var_dump($result);
 
         <br>
         <button type="submit">Add</button>
-    </form>
+    
     <div>
         <ul>
             <?php
             foreach ($result as $d) {
-                echo "<li>{$d['first_name']}</li>";
+                echo "<li>{$d['first_name']} {$d['phone_number']}</li>
+                <form action='delete_contact.php' method='post'>
+                <input type='hidden' name='id' value={$d['ID']}>
+                <button type='submit'>Delete</button>
+            </form>";
             }
             
             ?>
