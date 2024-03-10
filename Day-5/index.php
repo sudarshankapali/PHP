@@ -27,12 +27,12 @@ $result = mysqli_fetch_all($phone_data,MYSQLI_ASSOC);
         <ul>
             <?php
             foreach ($result as $d) {
-                echo "<li>{$d['first_name']} {$d['phone_number']}</li>
+                echo "<li>{$d['first_name']} {$d['last_name']} {$d['phone_number']}</li>
                 <form action='delete_contact.php' method='post'>
                 <input type='hidden' name='id' value={$d['ID']}>
                 <button type='submit'>Delete</button>
                 </form>
-                <form action='edit_contact.php' method='post'>
+            <form action='edit_contact.php' method='post'>
                 <input type='hidden' name='id' value={$d['ID']}>
                 <input type='hidden' name='first' value={$d['first_name']}>
                 <input type='hidden' name='mid' value={$d['middle_name']}>
