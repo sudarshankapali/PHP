@@ -1,6 +1,9 @@
 <?php
 require './connect.php';
-$sqlQuery = 'select '
+$sqlQuery = 'select * from contacts';
+$phone_data = mysqli_query($conn,$sqlQuery);
+$result = mysqli_fetch_all($phone_data,MYSQLI_ASSOC);
+var_dump($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +29,13 @@ $sqlQuery = 'select '
     </form>
     <div>
         <ul>
-            <li></li>
+            <?php
+            foreach ($result["first_name"] as $d) {
+                echo "<li>$d</li>";
+            }
+            
+            ?>
+            
         </ul>
     </div>
 </body>
