@@ -6,7 +6,6 @@ $mid = $_POST['mid'];
 $last = $_POST['last'];
 $number = $_POST['number'];
 //header('Location: /');
-echo "$id";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +15,7 @@ echo "$id";
     <title>Edit</title>
 </head>
 <body>
+    <h1>Edit the data</h1>
     <?php
     echo "<form action='edit.php' method='post'>
     <input type='hidden' name='i' value='{$id}'>
