@@ -1,5 +1,9 @@
 <?php
 require 'connect.php';
+$query = 'select * from categories';
+$result = mysqli_query($conn,$query);
+$data = mysqli_fetch_all($result,MYSQLI_ASSOC);
+// var_dump($data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +22,16 @@ require 'connect.php';
     <div class='Add'>
         <form action="connect.php" method="post"> 
             <h1>Add new</h1>
+            <input type="hidden" name="category-id">
             <label for="Entry type">Entry Type</label>
-            <input type="select" name="" id="">
+            <select name='' id=''>
+            <?php
+            foreach($data as $da){
+                echo "<option name='cate'>{$da['label']}</option>";
+            }
+            
+            ?>
+            </select>
             <br>
             <label for="">Name:</label>
             <input type="text" name="" id="">
