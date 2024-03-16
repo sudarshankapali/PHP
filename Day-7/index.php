@@ -37,7 +37,7 @@ body{
     <div class="display">
     <table>
   <tr>
-    <th colspan="5">Name</th>
+    <th colspan="5">Expenses</th>
   </tr>
   <tr>
     <th>S.N</th>
