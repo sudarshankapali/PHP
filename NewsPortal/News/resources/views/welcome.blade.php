@@ -21,12 +21,13 @@
                 <button>Subscribe</button>
             </div>
         </header>
-        <nav>
-            <div>News</div>
+        <nav>@foreach
+            <div><a href="news/{{$value['id']}}">News</a></div>
             <div>Sports</div>
             <div>Business</div>
             <div>Option</div>
             <div>Life and Style</div>
+            @endforeach
     </nav>
     <hr>
     </section>
@@ -49,16 +50,6 @@
                 </div>
             </div>
         </div>
-        <div class="hero_right">
-            <div> <h1>Subscribers only ></h1></div>
-            <div class="subscriber-wrapper">
-                <div>
-                    <img src="{{ asset('Images/news.jpg') }}" alt="">
-                    <div>this is text</div>
-                </div>
-            </div>
-            <div>this</div>
-            <div>this</div>
     </section>
     <!-- end of hero section  -->
     <section>

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\newsController;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +15,11 @@ use App\Http\Controllers\newsController;
 */
 
 Route::get('/', function () {
-    // $date = "this is date";
-    // return view('welcome',['date'=>$date]);
-    return newsController::ind();
+    $post = new Post();
+    $post->title='test';
+    $post->save();
+
+    $posts = Post::all();
+    dd($posts);
+    return view('welcome');
 });

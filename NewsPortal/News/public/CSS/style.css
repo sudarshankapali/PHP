@@ -64,13 +64,3 @@ main {
 .hero-wrapper>.hero-left>.hero_main>div:last-child {
     background-color: gray;
 }
-
-.hero-wrapper>.hero_right {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-}
-
-.hero-wrapper>.hero_right>.subscriber-wrapper {
-    display: flex;
-}
