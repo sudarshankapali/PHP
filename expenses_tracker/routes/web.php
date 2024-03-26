@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Post;
-use App\Http\Controllers\testController;
+use App\Http\Controllers\ExpenseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,14 +14,7 @@ use App\Http\Controllers\testController;
 |
 */
 
-Route::get('/', [testController::class,'test']);
-Route::get('/news/{id}',function($id){
-    return response($id);
-});
-    // $post = new Post();
-    // $post->title='test';
-    // $post->save();
-
-    // $posts = Post::all();
-    // dd($posts);
-
+Route::get('/', [ExpenseController::class,'homePage'])->name('expense.home');
+Route::get('/create', [ExpenseController::class,'createForm'])->name('expense.create');
+Route::post('/store', [ExpenseController::class,'store'])->name('expense.store');
+Route::get('/edit', [ExpenseController::class,'editForm'])->name('expense.edit');
