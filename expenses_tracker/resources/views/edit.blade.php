@@ -17,21 +17,23 @@
     <section>
       <div class="card">
         <div class="card-body">
-          <form>
+          <form method="get" action="{{route('expense.editBackend')}}">
             <div class="mb-3">
+                @foreach($edits as $edit)
+                <input type="hidden" name="id" value="{{$edit['id']}}">
               <label class="form-label">Expenses title</label>
-              <input type="text" class="form-control" name="title" value="test">
+              <input type="text" class="form-control" name="title" value="{{$edit['title']}}">
 
             </div>
             <div class="mb-3">
               <label class="form-label">Amount</label>
-              <input type="number" class="form-control" name="amount" value="100">
+              <input type="number" class="form-control" name="amount" value="{{$edit['amount']}}">
             </div>
             <div class="mb-3">
               <label class="form-label">Category</label>
-              <input type="text" class="form-control" name="category" value="Food">
+              <input type="text" class="form-control" name="category" value="{{$edit['category']}}">
             </div>
-
+            @endforeach
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>

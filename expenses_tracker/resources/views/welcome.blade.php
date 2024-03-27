@@ -12,6 +12,9 @@
     <main class="container-md">
         <header>
             <h1>Expenses tracker</h1>
+            <form action="{{route('expense.create')}}" method="get">
+            <button type="submit" class="btn btn-primary">Add Expenses</button>
+            </form>
         </header>
         <section>
             <table class="table">
@@ -26,14 +29,46 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
+                    <!-- <tr> -->
+                    
+                        <!-- <th scope="row">1</th>
                         <td>Something to eat</td>
                         <td>1000</td>
                         <td>Food</td>
                         <td><button class="btn btn-primary">Edit</button></td>
-                        <td><button class="btn btn-danger">Delete</button></td>
-                    </tr>
+                        <td><button class="btn btn-danger">Delete</button></td> -->
+                        @foreach($users as $value)
+
+<tr>
+
+<td>{{ $value->id }}</td>
+
+<td>{{ $value->title }}</td>
+
+<td>{{ $value->amount }}</td>
+
+<td>{{ $value->category }}</td>
+
+<form action="{{route('expense.edit')}}" method="post">
+    @csrf
+<input type="hidden" value="{{ $value->id }}" name="editID">
+<input type="hidden" value="{{ $value->title }}" name="editTitle">
+<input type="hidden" value="{{ $value->amount }}" name="editAmount">
+<input type="hidden" value="{{ $value->category }}" name="editCategory">
+<td><button type="submit" class="btn btn-primary">Edit</button></td>
+</form>
+
+<form action="{{route('expense.delete')}}" method="post">
+@csrf
+    <input type="hidden" value="{{ $value->id }}" name="deleteID">
+    <td><button type="submit" class="btn btn-danger">Delete</button></td>
+</form>
+
+</tr>
+
+@endforeach
+                    <!-- </tr> -->
+                    
 
                 </tbody>
             </table>
