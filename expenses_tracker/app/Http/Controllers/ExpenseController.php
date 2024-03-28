@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Expense;
 
 class ExpenseController extends Controller
 {
     //
     public function homePage(){
-        $users = \DB::table('expenses')->select('id','title','amount','category')->get();
+        $users = Expense::all();
+                // $users = \DB::table('expenses')->select('id','title','amount','category')->get();
         return view('welcome',['users'=>$users]);
     }
     public function createForm(){
@@ -29,11 +31,19 @@ class ExpenseController extends Controller
         $title = $req->input('title');
         $amount = $req->input('amount');
         $category = $req->input('category');
-        \DB::table('expenses')->insert([
-            'title'=>$title,
-            'amount'=>$amount,
-            'category'=>$category
-        ]);
+
+        $exp = new Expense();
+        $exp->title=$title;
+        $exp->amount=$amount;
+
+        $exp->category=$category;
+        $exp->save();
+
+        // \DB::table('expenses')->insert([
+        //     'title'=>$title,
+        //     'amount'=>$amount,
+        //     'category'=>$category
+        // ]);
         // dd($req);
         return redirect()->route('expense.home');
     }
