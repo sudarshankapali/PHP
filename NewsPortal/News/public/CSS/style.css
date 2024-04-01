@@ -61,6 +61,31 @@ main {
     grid-template-columns: 2fr 1fr;
 }
 
+#image {
+    /* width: 200px; */
+}
+
 .hero-wrapper>.hero-left>.hero_main>div:last-child {
     background-color: gray;
+}
+
+.hero-wrapper>.hero-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.hero-wrapper>.hero-right>.sub {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.other-news {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.other-news>div {
+    background-color: yellow;
+    
 }

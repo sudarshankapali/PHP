@@ -17,6 +17,16 @@ class ExpenseController extends Controller
         return view('create');
     }
     public function editForm(Request $req){
+        // public function editForm($id,Request $req) 
+        // $users = Expense::find($id);
+        // $users->title = $req->input('editID');
+        // $user-> update();
+        // $id = $req->input('editID');
+        // $title = $req->input('editTitle');
+        // $amount = $req->input('editAmount');
+        // $category = $req->input('editCategory');
+        
+
         $id = $req->input('editID');
         $title = $req->input('editTitle');
         $amount = $req->input('editAmount');
@@ -48,6 +58,9 @@ class ExpenseController extends Controller
         return redirect()->route('expense.home');
     }
     public function delete(Request $req){
+        // public function delete($id,Request $req)
+        // $users = Expense::find($id);
+        // $users->delete();
         $id = $req->input('deleteID');
         \DB::table('expenses')->where('id',$id)->delete();
         return redirect()->route('expense.home');

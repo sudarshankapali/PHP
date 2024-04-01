@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hacking News</title>
     <link rel="stylesheet" href="{{ asset('CSS/style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <main>
@@ -21,13 +22,13 @@
                 <button>Subscribe</button>
             </div>
         </header>
-        <nav>@foreach
-            <div><a href="news/{{$value['id']}}">News</a></div>
+        <nav>
+            <div><a href="#">News</a></div>
             <div>Sports</div>
             <div>Business</div>
             <div>Option</div>
             <div>Life and Style</div>
-            @endforeach
+            
     </nav>
     <hr>
     </section>
@@ -42,7 +43,7 @@
                 </ul>
             </div>
             <div class="hero_main">
-                <div>
+                <div id="image">
                     <img src="{{ asset('Images/news.jpg') }}" alt="news-image" srcset="">
                 </div>
                 <div>
@@ -50,10 +51,44 @@
                 </div>
             </div>
         </div>
+        <div class="hero-right">
+            <div>
+                <h1>Suscribers only ></h1>
+            </div>
+            <div class="sub">
+            <div>
+                <img src="{{ asset('Images/news.jpg') }}" alt="">
+            </div>
+            <div>this is for text</div>
+            </div>
+            <div class="sub">
+            <div>
+            <img src="{{ asset('Images/news.jpg') }}" alt="">
+            </div>
+            <div>this is for text</div>
+            </div>
+            <div class="sub">
+            <div>
+            <img src="{{ asset('Images/news.jpg') }}" alt="">
+            </div>
+            <div>this is for text</div>
+            </div>
+        </div>
     </section>
     <!-- end of hero section  -->
     <section>
-        <h1>this is sports news</h1>
+    <div class="other-news">
+            <div>news</div>
+            <div>news</div>
+            <div>news</div>
+            <div>news</div>
+            <div>news</div>
+            <div>news</div>
+            <div>news</div>
+            <div>news</div>
+            <div>news</div>
+        </div>
+        <!-- <h1>this is sports news</h1> -->
     </section>
     <!-- end of sports news section  -->
     <section>
